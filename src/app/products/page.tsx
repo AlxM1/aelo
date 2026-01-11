@@ -108,6 +108,18 @@ export default function ProductsPage() {
               <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="/#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
             </div>
+            {/* Mobile Menu Button */}
+            <button className="md:hidden text-2xl" onClick={() => document.getElementById('mobile-menu-products')?.classList.toggle('hidden')}>
+              ☰
+            </button>
+          </div>
+        </div>
+        {/* Mobile Menu */}
+        <div id="mobile-menu-products" className="hidden md:hidden bg-background/95 backdrop-blur-md border-t border-black/5">
+          <div className="px-6 py-4 space-y-3">
+            <a href="/products" className="block text-sm font-medium opacity-100 border-b border-accent pb-2">Products</a>
+            <a href="/#about" className="block text-sm font-medium hover:opacity-60 transition-opacity">About</a>
+            <a href="/#sustainability" className="block text-sm font-medium hover:opacity-60 transition-opacity">Sustainability</a>
           </div>
         </div>
       </nav>
