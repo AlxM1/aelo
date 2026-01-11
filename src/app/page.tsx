@@ -19,6 +19,7 @@ export default function Home() {
               <a href="#find-aelo" className="hover:opacity-60 transition-opacity">Find aēlo Near You</a>
               <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
+              <a href="/contact" className="hover:opacity-60 transition-opacity">Contact Us</a>
             </div>
             {/* Mobile Menu Button */}
             <button className="md:hidden text-2xl" onClick={() => document.getElementById('mobile-menu')?.classList.toggle('hidden')}>
@@ -35,6 +36,7 @@ export default function Home() {
             <a href="#find-aelo" className="block text-sm font-medium hover:opacity-60 transition-opacity">Find aēlo Near You</a>
             <a href="#about" className="block text-sm font-medium hover:opacity-60 transition-opacity">About</a>
             <a href="#sustainability" className="block text-sm font-medium hover:opacity-60 transition-opacity">Sustainability</a>
+            <a href="/contact" className="block text-sm font-medium hover:opacity-60 transition-opacity">Contact Us</a>
           </div>
         </div>
       </nav>
@@ -457,6 +459,7 @@ export default function Home() {
                 <a href="#find-aelo" className="block hover:text-foreground transition-colors">Find aēlo</a>
                 <a href="#about" className="block hover:text-foreground transition-colors">About</a>
                 <a href="#sustainability" className="block hover:text-foreground transition-colors">Sustainability</a>
+                <a href="/contact" className="block hover:text-foreground transition-colors">Contact Us</a>
               </div>
             </div>
             <div>
