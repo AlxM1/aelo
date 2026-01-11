@@ -43,11 +43,11 @@ export default function ShoppingCart() {
       {/* Cart Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed top-24 right-6 z-40 bg-gradient-to-r from-slate-900 to-slate-700 text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+        className="fixed top-20 right-3 sm:right-6 z-40 bg-gradient-to-r from-slate-900 to-slate-700 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2 text-sm sm:text-base"
       >
-        <span className="text-xl">🛒</span>
+        <span className="text-lg sm:text-xl">🛒</span>
         {getTotalItems() > 0 && (
-          <span className="bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center">
+          <span className="bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-xs">
             {getTotalItems()}
           </span>
         )}
@@ -64,13 +64,13 @@ export default function ShoppingCart() {
 
           {/* Sidebar */}
           <div className="fixed top-0 right-0 h-full w-full sm:w-96 bg-white z-50 shadow-2xl overflow-y-auto">
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-light">Shopping Cart</h2>
+              <div className="flex items-center justify-between mb-4 sm:mb-6">
+                <h2 className="text-xl sm:text-2xl font-light">Shopping Cart</h2>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-3xl hover:opacity-60 transition-opacity"
+                  className="text-2xl sm:text-3xl hover:opacity-60 transition-opacity"
                 >
                   ×
                 </button>
@@ -79,34 +79,34 @@ export default function ShoppingCart() {
               {/* Cart Items */}
               {items.length === 0 ? (
                 <div className="text-center py-12">
-                  <p className="text-lg text-gray-500 mb-4">Your cart is empty</p>
+                  <p className="text-base sm:text-lg text-gray-500 mb-4">Your cart is empty</p>
                   <button
                     onClick={() => setIsOpen(false)}
-                    className="text-sm text-slate-900 underline hover:opacity-60"
+                    className="text-xs sm:text-sm text-slate-900 underline hover:opacity-60"
                   >
                     Continue Shopping
                   </button>
                 </div>
               ) : (
                 <>
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                     {items.map((item) => (
                       <div
                         key={item.id}
-                        className="flex gap-4 p-4 border border-gray-200 rounded-lg"
+                        className="flex gap-3 p-3 sm:p-4 border border-gray-200 rounded-lg"
                       >
-                        <div className="relative w-12 h-16 flex-shrink-0">
+                        <div className="relative w-10 h-14 sm:w-12 sm:h-16 flex-shrink-0">
                           <Image
                             src={item.image}
                             alt={item.name}
-                            width={48}
-                            height={64}
+                            width={40}
+                            height={56}
                             className="object-contain"
                           />
                         </div>
-                        <div className="flex-1">
-                          <h3 className="font-medium text-sm mb-1">{item.name}</h3>
-                          <p className="text-xs text-gray-500 mb-2">{item.icon} {item.tagline}</p>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium text-xs sm:text-sm mb-1 truncate">{item.name}</h3>
+                          <p className="text-xs text-gray-500 mb-2 line-clamp-1">{item.icon} {item.tagline}</p>
                           <div className="flex items-center gap-3">
                             <div className="flex items-center border border-gray-300 rounded">
                               <button
