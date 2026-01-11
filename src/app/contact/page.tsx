@@ -122,7 +122,7 @@ export default function ContactPage() {
                 <div className="text-5xl mb-4">❓</div>
                 <h3 className="text-xl font-medium mb-3 text-gray-900">Have Questions?</h3>
                 <p className="text-sm text-gray-700 mb-3">Check out our FAQ for quick answers</p>
-                <a href="https://drinkaelo.com/faq" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900 underline">
+                <a href="/faq" className="text-gray-700 hover:text-gray-900 underline">
                   Visit FAQ
                 </a>
               </div>
