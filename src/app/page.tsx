@@ -18,8 +18,9 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-background to-emerald-50 opacity-60"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-4xl">
             <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-[0.9]">
               Zero Moments<br />Wasted<span className="text-5xl align-top">™</span>
@@ -31,7 +32,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-accent text-white text-sm font-medium tracking-wide hover:bg-accent/90 transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-medium tracking-wide hover:from-slate-800 hover:to-slate-600 transition-all shadow-lg hover:shadow-xl"
               >
                 Explore Products
               </a>
@@ -83,39 +84,59 @@ export default function Home() {
               {
                 name: "Gin & Tonic",
                 description: "Classic sophistication with botanical notes and refreshing citrus",
+                gradient: "from-cyan-100 via-teal-50 to-emerald-100",
+                hoverGradient: "group-hover:from-cyan-200 group-hover:via-teal-100 group-hover:to-emerald-200",
+                icon: "🌿",
               },
               {
                 name: "Peach Bellini",
                 description: "Elegant and fruity, perfect for any celebration",
+                gradient: "from-rose-100 via-pink-50 to-peach-100",
+                hoverGradient: "group-hover:from-rose-200 group-hover:via-pink-100 group-hover:to-orange-100",
+                icon: "🍑",
               },
               {
                 name: "Aperitivo Spritz",
                 description: "Bitter-sweet Italian classic with a refreshing twist",
+                gradient: "from-orange-100 via-amber-50 to-red-100",
+                hoverGradient: "group-hover:from-orange-200 group-hover:via-amber-100 group-hover:to-red-200",
+                icon: "🍊",
               },
               {
                 name: "Lime Margarita",
                 description: "Bold citrus flavor with a perfect balance of sweet and tart",
+                gradient: "from-lime-100 via-green-50 to-yellow-100",
+                hoverGradient: "group-hover:from-lime-200 group-hover:via-green-100 group-hover:to-yellow-200",
+                icon: "🍋",
               },
               {
                 name: "Limoncello Spritz",
                 description: "Bright lemon essence with sparkling sophistication",
+                gradient: "from-yellow-100 via-amber-50 to-orange-50",
+                hoverGradient: "group-hover:from-yellow-200 group-hover:via-amber-100 group-hover:to-orange-100",
+                icon: "✨",
               },
             ].map((product) => (
               <div
                 key={product.name}
-                className="group relative bg-cream p-8 hover:bg-beige transition-colors cursor-pointer"
+                className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
-                <div className="aspect-square bg-background/30 mb-6 flex items-center justify-center">
-                  <div className="text-6xl opacity-20">🍸</div>
-                </div>
-                <h3 className="text-2xl font-light mb-3 tracking-tight">
-                  {product.name}
-                </h3>
-                <p className="text-sm text-foreground/60 leading-relaxed">
-                  {product.description}
-                </p>
-                <div className="mt-6 text-xs tracking-widest uppercase text-foreground/40">
-                  355ml
+                <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} ${product.hoverGradient} transition-all duration-500`}></div>
+                <div className="relative z-10 p-8">
+                  <div className="aspect-square bg-white/40 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center group-hover:bg-white/60 transition-all duration-500">
+                    <div className="text-7xl transform group-hover:scale-110 transition-transform duration-500">
+                      {product.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-light mb-3 tracking-tight text-gray-900">
+                    {product.name}
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">
+                    {product.description}
+                  </p>
+                  <div className="mt-6 text-xs tracking-widest uppercase text-gray-600 font-medium">
+                    355ml
+                  </div>
                 </div>
               </div>
             ))}
