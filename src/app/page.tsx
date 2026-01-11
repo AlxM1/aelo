@@ -49,59 +49,153 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right - Animated Cocktail Section */}
-            <div className="hidden lg:flex items-center justify-center relative h-[400px]">
-              {/* Animation Container */}
+            {/* Right - Realistic Animated Cocktail Section */}
+            <div className="hidden lg:flex items-center justify-center relative h-[500px]">
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Can pouring */}
-                <div className="absolute top-8 right-24 z-20 animate-tilt-can">
+
+                {/* aēlo Can - Pouring Animation */}
+                <div
+                  className="absolute top-12 right-32 z-30"
+                  style={{
+                    animation: 'tiltCan 6s ease-in-out infinite',
+                    transformOrigin: 'bottom center'
+                  }}
+                >
                   <Image
                     src="/lime-margarita.webp"
-                    alt="aēlo can"
-                    width={80}
-                    height={100}
+                    alt="aēlo Lime Margarita"
+                    width={100}
+                    height={130}
                     className="object-contain drop-shadow-2xl"
                   />
                 </div>
 
-                {/* Pouring liquid stream */}
-                <div className="absolute top-32 right-20 w-2 bg-gradient-to-b from-lime-300 to-lime-400 rounded-full animate-pour z-10 shadow-lg"></div>
+                {/* Liquid Stream - Realistic Pour */}
+                <div
+                  className="absolute top-40 right-28 z-20 origin-top"
+                  style={{
+                    animation: 'liquidPour 6s ease-in-out infinite',
+                    width: '6px',
+                    height: '100px',
+                    background: 'linear-gradient(180deg, rgba(190, 242, 100, 0.9) 0%, rgba(163, 230, 53, 0.95) 50%, rgba(132, 204, 22, 1) 100%)',
+                    borderRadius: '3px',
+                    filter: 'blur(0.5px)',
+                    boxShadow: '0 0 10px rgba(163, 230, 53, 0.6), inset 0 0 5px rgba(255, 255, 255, 0.3)'
+                  }}
+                >
+                  {/* Liquid stream highlights */}
+                  <div className="absolute inset-0 w-1/3 bg-white/30 rounded-l-full blur-[1px]"></div>
+                </div>
 
-                {/* Cocktail Glass */}
-                <div className="absolute bottom-20 right-8 z-10">
-                  <div className="relative">
-                    {/* Glass outline */}
-                    <div className="w-32 h-40 border-4 border-gray-300 bg-white/20 backdrop-blur-sm rounded-b-full relative overflow-hidden shadow-xl">
-                      {/* Liquid fill */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-lime-400 to-lime-300 animate-fill-glass rounded-b-full"></div>
+                {/* Realistic Cocktail Glass Container */}
+                <div className="absolute bottom-28 right-16 z-10">
+                  <div className="relative w-48 h-64">
 
-                      {/* Ice cubes */}
-                      <div className="absolute top-1/2 left-1/4 w-6 h-6 bg-white/70 backdrop-blur-sm rounded shadow-inner animate-float"></div>
-                      <div className="absolute top-1/3 right-1/4 w-5 h-5 bg-white/60 backdrop-blur-sm rounded shadow-inner animate-float" style={{ animationDelay: '0.5s' }}></div>
+                    {/* Real Glass Image */}
+                    <Image
+                      src="/cocktail-glass.png"
+                      alt="Cocktail Glass"
+                      width={192}
+                      height={256}
+                      className="absolute inset-0 object-contain drop-shadow-2xl z-20"
+                    />
 
-                      {/* Bubbles */}
-                      <div className="absolute bottom-2 left-1/4 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2s ease-in-out infinite' }}></div>
-                      <div className="absolute bottom-2 right-1/3 w-1.5 h-1.5 bg-white rounded-full" style={{ animation: 'bubbleRise 2.5s ease-in-out infinite 0.3s' }}></div>
-                      <div className="absolute bottom-2 left-1/2 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2.2s ease-in-out infinite 0.6s' }}></div>
-                      <div className="absolute bottom-2 right-1/4 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2.8s ease-in-out infinite 0.9s' }}></div>
+                    {/* Liquid Fill with Gradient (Behind Glass) */}
+                    <div
+                      className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-48 z-10"
+                      style={{
+                        animation: 'fillLiquid 6s ease-in-out infinite',
+                        background: 'linear-gradient(0deg, rgba(132, 204, 22, 0.85) 0%, rgba(163, 230, 53, 0.75) 50%, rgba(190, 242, 100, 0.65) 100%)',
+                        backgroundSize: '200% 200%',
+                        clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)',
+                        filter: 'blur(1px)',
+                        mixBlendMode: 'multiply'
+                      }}
+                    >
+                      {/* Liquid shimmer effect */}
+                      <div
+                        className="absolute inset-0 opacity-40"
+                        style={{
+                          background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%)',
+                          animation: 'liquidShimmer 3s ease-in-out infinite'
+                        }}
+                      ></div>
                     </div>
 
-                    {/* Lemon twist decoration */}
-                    <div className="absolute -top-2 right-2 text-4xl animate-float" style={{ animationDelay: '1s' }}>
+                    {/* Ice Cubes - Floating in liquid */}
+                    <div
+                      className="absolute top-32 left-16 w-8 h-8 bg-white/80 backdrop-blur-md rounded-lg shadow-lg z-15 border border-white/40"
+                      style={{
+                        animation: 'iceFloat 4s ease-in-out infinite',
+                        boxShadow: 'inset 0 0 10px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(0, 0, 0, 0.15)'
+                      }}
+                    >
+                      <div className="absolute inset-1 bg-gradient-to-br from-white/90 to-white/40 rounded"></div>
+                    </div>
+
+                    <div
+                      className="absolute top-40 right-14 w-7 h-7 bg-white/75 backdrop-blur-md rounded-lg shadow-lg z-15 border border-white/40"
+                      style={{
+                        animation: 'iceFloat 3.5s ease-in-out infinite 0.8s',
+                        boxShadow: 'inset 0 0 10px rgba(255, 255, 255, 0.8), 0 4px 12px rgba(0, 0, 0, 0.15)'
+                      }}
+                    >
+                      <div className="absolute inset-1 bg-gradient-to-br from-white/90 to-white/40 rounded"></div>
+                    </div>
+
+                    {/* Realistic Bubbles - Multiple sizes and timing */}
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={i}
+                        className="absolute z-15 rounded-full bg-white/60 backdrop-blur-sm"
+                        style={{
+                          left: `${30 + (i * 8)}%`,
+                          width: `${4 + (i % 3) * 2}px`,
+                          height: `${4 + (i % 3) * 2}px`,
+                          animation: `bubbleFloat ${2.5 + (i * 0.3)}s ease-in-out infinite ${i * 0.4}s`,
+                          '--bubble-drift': `${(i % 2 === 0 ? -1 : 1) * (5 + i * 2)}px`,
+                          boxShadow: 'inset 0 0 3px rgba(255, 255, 255, 0.9), 0 0 5px rgba(190, 242, 100, 0.3)'
+                        } as React.CSSProperties}
+                      >
+                        <div className="absolute top-1 left-1 w-1/3 h-1/3 bg-white/90 rounded-full blur-[0.5px]"></div>
+                      </div>
+                    ))}
+
+                    {/* Lime Garnish - Realistic Position */}
+                    <div
+                      className="absolute -top-4 right-8 z-25 text-5xl filter drop-shadow-lg"
+                      style={{
+                        animation: 'garnishBob 4s ease-in-out infinite',
+                        transformOrigin: 'bottom center'
+                      }}
+                    >
                       🍋
                     </div>
-
-                    {/* Glass stem */}
-                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-3 h-6 bg-gradient-to-b from-gray-300 to-gray-400 shadow-md"></div>
-                    <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gradient-to-b from-gray-400 to-gray-500 rounded-full shadow-lg"></div>
                   </div>
                 </div>
 
-                {/* CTA Text */}
-                <div className="absolute bottom-0 left-0 right-0 text-center animate-fade-in-up">
-                  <p className="text-sm font-medium text-gray-700 mb-2">Experience the difference</p>
-                  <p className="text-lg font-light text-gray-900">Shop Now & Save 10%</p>
-                  <p className="text-xs text-gray-500 mt-1">Use code: <span className="font-mono font-semibold">FRIENDSOFAELO</span></p>
+                {/* Conversion CTA with Animation */}
+                <div
+                  className="absolute bottom-4 left-0 right-0 text-center px-8"
+                  style={{ animation: 'fadeInScale 1.5s ease-out 0.5s forwards', opacity: 0 }}
+                >
+                  <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-gray-200/50">
+                    <p className="text-sm font-semibold text-gray-600 mb-2 uppercase tracking-wide">
+                      Experience Premium Taste
+                    </p>
+                    <p
+                      className="text-2xl font-light text-gray-900 mb-3"
+                      style={{ animation: 'pulse 2s ease-in-out infinite' }}
+                    >
+                      Save <span className="font-bold text-lime-600">10%</span> Today
+                    </p>
+                    <div className="inline-block bg-gradient-to-r from-lime-500 to-emerald-500 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
+                      Code: <span className="font-mono">FRIENDSOFAELO</span>
+                    </div>
+                    <p className="text-xs text-gray-500 mt-3">
+                      ✓ Zero Alcohol  •  ✓ Zero Sugar  •  ✓ Zero Calories
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
