@@ -1,0 +1,292 @@
+import Image from "next/image";
+
+export default function ProductsPage() {
+  const products = [
+    {
+      id: "gin-tonic",
+      number: "001",
+      name: "Gin & Tonic",
+      tagline: "Award-Winning Spanish Style",
+      description: "Handcrafted aromatic bitters made with real spices and notes of fresh cucumber, blood orange, lime, and fresh mint leaves.",
+      ingredients: "Filtered water, alcohol-free gin, tonic, citric acid, organic stevia",
+      flavorProfile: ["Fresh Cucumber", "Blood Orange", "Lime", "Mint Leaves"],
+      gradient: "from-cyan-100 via-teal-100 to-emerald-100",
+      accentGradient: "from-cyan-500 to-teal-600",
+      image: "/gin-tonic.webp",
+      icon: "🌿",
+    },
+    {
+      id: "aperitivo-spritz",
+      number: "002",
+      name: "Aperitivo Spritz",
+      tagline: "European-Inspired Refreshment",
+      description: "Notes of fresh Seville oranges, grapefruit, rhubarb, and handcrafted aromatic bitters made with real spices and sparkling prosecco.",
+      ingredients: "Filtered water, alcohol-free aperitivo, natural flavors, organic stevia",
+      flavorProfile: ["Seville Orange", "Grapefruit", "Rhubarb", "Sparkling Prosecco"],
+      gradient: "from-orange-100 via-red-100 to-pink-100",
+      accentGradient: "from-orange-500 to-red-600",
+      image: "/aperitivo-spritz.webp",
+      icon: "🍊",
+    },
+    {
+      id: "peach-bellini",
+      number: "003",
+      name: "Peach Bellini",
+      tagline: "Sparkling Peach Elegance",
+      description: "Smooth notes of fresh peaches combined with handcrafted aromatic bitters, real spices, herbs and sparkling Prosecco.",
+      ingredients: "Filtered water, natural peach flavors, handcrafted bitters, organic stevia",
+      flavorProfile: ["Fresh Peaches", "Real Spices", "Herbs", "Sparkling Prosecco"],
+      gradient: "from-rose-100 via-pink-100 to-orange-100",
+      accentGradient: "from-rose-500 to-pink-600",
+      image: "/peach-bellini.webp",
+      icon: "🍑",
+    },
+    {
+      id: "lime-margarita",
+      number: "004",
+      name: "Lime Margarita",
+      tagline: "The Party Pleaser",
+      description: "Tequila-extract based blend combining bitter orange, lime juice, and a pinch of salt. Perfect for any celebration.",
+      ingredients: "Filtered water, tequila extract, bitter orange, lime juice, sea salt, organic stevia",
+      flavorProfile: ["Bitter Orange", "Fresh Lime", "Sea Salt", "Tequila Notes"],
+      gradient: "from-lime-100 via-green-100 to-yellow-100",
+      accentGradient: "from-lime-500 to-green-600",
+      image: "/lime-margarita.webp",
+      icon: "🍋",
+    },
+    {
+      id: "limoncello-spritz",
+      number: "005",
+      name: "Limoncello Spritz",
+      tagline: "Classic Summer Flavor",
+      description: "Zero alcohol, zero sugar and zero calories featuring alcohol-free aperitivo and bright lemon essence with sparkling sophistication.",
+      ingredients: "Filtered water, alcohol-free aperitivo, natural lemon flavors, organic stevia",
+      flavorProfile: ["Bright Lemon", "Citrus Zest", "Sparkling", "Light & Refreshing"],
+      gradient: "from-yellow-100 via-amber-100 to-orange-100",
+      accentGradient: "from-yellow-500 to-amber-600",
+      image: "/limoncello-spritz.webp",
+      icon: "✨",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-black/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <a href="/" className="text-2xl font-light tracking-wider hover:opacity-60 transition-opacity">
+              a<span className="text-sm align-top">ē</span>lo
+            </a>
+            <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+              <a href="/products" className="opacity-100 border-b-2 border-accent pb-1">Products</a>
+              <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
+              <a href="/#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-amber-50 via-background to-emerald-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl font-light tracking-tight mb-6 leading-tight">
+            Our Collection
+          </h1>
+          <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-3xl mx-auto leading-relaxed">
+            Handcrafted by an internationally award-winning mixologist using premium, locally-sourced ingredients in Vancouver, BC.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Zero Alcohol</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Zero Sugar</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Zero Calories</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Keto-Friendly</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Vegan</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span className="text-foreground/80">Gluten-Free</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="py-20 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-32">
+          {products.map((product, index) => (
+            <div
+              key={product.id}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? "lg:flex-row-reverse" : ""
+              }`}
+            >
+              {/* Product Image Side */}
+              <div
+                className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}
+              >
+                <div
+                  className={`relative rounded-3xl overflow-hidden bg-gradient-to-br ${product.gradient} p-12 shadow-2xl`}
+                >
+                  {/* Product Icon */}
+                  <div className="absolute top-8 right-8 text-6xl opacity-40">
+                    {product.icon}
+                  </div>
+
+                  {/* Product Image */}
+                  <div className="relative w-full h-96 flex items-center justify-center">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={200}
+                      height={280}
+                      className="object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Product Number Badge */}
+                  <div className="absolute bottom-8 left-8">
+                    <div className={`bg-gradient-to-r ${product.accentGradient} text-white px-4 py-2 rounded-full text-sm font-semibold`}>
+                      No. {product.number}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Product Details Side */}
+              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <div className="space-y-6">
+                  <div>
+                    <h2 className="text-5xl font-light tracking-tight mb-3">
+                      {product.name}
+                    </h2>
+                    <p className={`text-lg font-medium bg-gradient-to-r ${product.accentGradient} bg-clip-text text-transparent`}>
+                      {product.tagline}
+                    </p>
+                  </div>
+
+                  <p className="text-lg text-foreground/70 leading-relaxed">
+                    {product.description}
+                  </p>
+
+                  {/* Flavor Profile */}
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-3">
+                      Flavor Profile
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {product.flavorProfile.map((flavor) => (
+                        <span
+                          key={flavor}
+                          className="px-4 py-2 bg-gray-100 rounded-full text-sm text-foreground/80"
+                        >
+                          {flavor}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Ingredients */}
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-2">
+                      Ingredients
+                    </h3>
+                    <p className="text-sm text-foreground/60 leading-relaxed">
+                      {product.ingredients}
+                    </p>
+                  </div>
+
+                  {/* Size & Certifications */}
+                  <div className="pt-4 border-t border-gray-200">
+                    <div className="flex items-center gap-6 text-sm text-foreground/60">
+                      <div>
+                        <span className="font-semibold text-foreground">Size:</span> 355ml
+                      </div>
+                      <div>
+                        <span className="font-semibold text-foreground">Made in:</span> Vancouver, BC
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="pt-4">
+                    <button
+                      className={`px-8 py-4 bg-gradient-to-r ${product.accentGradient} text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}
+                    >
+                      Order Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Promo Banner */}
+      <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-light tracking-tight mb-4">
+            Save 10% on Your First Order
+          </h2>
+          <p className="text-xl opacity-90 mb-6">
+            Use code at checkout
+          </p>
+          <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-4">
+            <p className="text-sm opacity-75 mb-2">PROMO CODE</p>
+            <p className="text-3xl font-mono font-bold">FRIENDSOFAELO</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 px-6 lg:px-8 border-t border-black/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div className="md:col-span-2">
+              <div className="text-3xl font-light tracking-wider mb-4">
+                a<span className="text-lg align-top">ē</span>lo
+              </div>
+              <p className="text-sm text-foreground/60 max-w-md leading-relaxed">
+                Premium non-alcoholic cocktails handcrafted in Canada. Zero alcohol, zero sugar, zero calories.
+              </p>
+            </div>
+            <div>
+              <h4 className="text-sm font-medium mb-4 tracking-wider">Quick Links</h4>
+              <div className="space-y-2 text-sm text-foreground/60">
+                <a href="/products" className="block hover:text-foreground transition-colors">Products</a>
+                <a href="/#about" className="block hover:text-foreground transition-colors">About</a>
+                <a href="/#sustainability" className="block hover:text-foreground transition-colors">Sustainability</a>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-sm font-medium mb-4 tracking-wider">Connect</h4>
+              <div className="space-y-2 text-sm text-foreground/60">
+                <a href="https://www.instagram.com/drinkaelo/" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">Instagram</a>
+                <a href="https://www.facebook.com/drinkaelo" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">Facebook</a>
+                <a href="https://www.tiktok.com/@drinkaelo" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">TikTok</a>
+              </div>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-black/5 text-center text-sm text-foreground/40">
+            <p>© {new Date().getFullYear()} aēlo. All rights reserved. Zero Moments Wasted™</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

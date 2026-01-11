@@ -7,9 +7,9 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-black/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <div className="text-2xl font-light tracking-wider">
+            <a href="/" className="text-2xl font-light tracking-wider hover:opacity-60 transition-opacity">
               a<span className="text-sm align-top">ē</span>lo
-            </div>
+            </a>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium">
               <a href="/products" className="hover:opacity-60 transition-opacity">Products</a>
               <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
