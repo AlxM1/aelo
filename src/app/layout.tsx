@@ -91,6 +91,17 @@ export const metadata: Metadata = {
     canonical: 'https://drinkaelo.com',
   },
   category: 'food and drink',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'aēlo',
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 export default function RootLayout({
