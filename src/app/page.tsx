@@ -15,6 +15,18 @@ export default function Home() {
               <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
             </div>
+            {/* Mobile Menu Button */}
+            <button className="md:hidden text-2xl" onClick={() => document.getElementById('mobile-menu')?.classList.toggle('hidden')}>
+              ☰
+            </button>
+          </div>
+        </div>
+        {/* Mobile Menu */}
+        <div id="mobile-menu" className="hidden md:hidden bg-background/95 backdrop-blur-md border-t border-black/5">
+          <div className="px-6 py-4 space-y-3">
+            <a href="/products" className="block text-sm font-medium hover:opacity-60 transition-opacity">Products</a>
+            <a href="#about" className="block text-sm font-medium hover:opacity-60 transition-opacity">About</a>
+            <a href="#sustainability" className="block text-sm font-medium hover:opacity-60 transition-opacity">Sustainability</a>
           </div>
         </div>
       </nav>
@@ -23,17 +35,17 @@ export default function Home() {
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-background to-emerald-50 opacity-60"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="max-w-4xl">
-              <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-[0.9]">
-                Zero Moments<br />Wasted<span className="text-5xl align-top">™</span>
+            <div className="max-w-4xl text-center lg:text-left">
+              <h1 className="text-5xl sm:text-6xl md:text-8xl font-light tracking-tight mb-6 lg:mb-8 leading-[0.9]">
+                Zero Moments<br />Wasted<span className="text-4xl sm:text-5xl align-top">™</span>
               </h1>
-              <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-12 leading-relaxed">
+              <p className="text-lg sm:text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-8 lg:mb-12 leading-relaxed mx-auto lg:mx-0">
                 Handcrafted premium non-alcoholic cocktails. Zero alcohol. Zero sugar. Zero calories.
-                <span className="block mt-4 text-base">Proudly Canadian 🇨🇦</span>
+                <span className="block mt-4 text-sm sm:text-base">Proudly Canadian 🇨🇦</span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="#products"
                   className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-medium tracking-wide hover:from-slate-800 hover:to-slate-600 transition-all shadow-lg hover:shadow-xl"
@@ -49,11 +61,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right - Video Section */}
-            <div className="hidden lg:flex items-center justify-center relative h-[500px]">
+            {/* Right - Video Section - Responsive */}
+            <div className="flex items-center justify-center relative h-[300px] sm:h-[400px] lg:h-[500px] mt-8 lg:mt-0">
               <div className="relative w-full h-full flex items-center justify-center">
-                {/* Video Container - Full Content Visible */}
-                <div className="relative w-[550px] h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                {/* Video Container - Responsive */}
+                <div className="relative w-full max-w-[400px] sm:max-w-[450px] lg:w-[550px] h-full rounded-2xl overflow-hidden shadow-2xl">
                   <video
                     autoPlay
                     loop
