@@ -67,8 +67,68 @@ export default function ProductsPage() {
     };
   });
 
+  // Create product schema markup
+  const productsSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": productsWithDetails.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "Product",
+        "@id": `https://drinkaelo.com/products#${product.id}`,
+        "name": product.name,
+        "description": product.description,
+        "image": `https://drinkaelo.com${product.image}`,
+        "brand": {
+          "@type": "Brand",
+          "name": "aēlo"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": `https://drinkaelo.com/products#${product.id}`,
+          "priceCurrency": "CAD",
+          "price": product.price,
+          "priceValidUntil": "2026-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Liquid Intelligence Ltd."
+          }
+        },
+        "category": "Non-Alcoholic Beverages",
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Alcohol Content",
+            "value": "0%"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Calories",
+            "value": "0"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Sugar Content",
+            "value": "0g"
+          }
+        ],
+        "audience": {
+          "@type": "PeopleAudience",
+          "suggestedMinAge": 0
+        }
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productsSchema) }}
+      />
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-black/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
