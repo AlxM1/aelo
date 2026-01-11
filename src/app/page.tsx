@@ -53,14 +53,14 @@ export default function Home() {
             <div className="hidden lg:flex items-center justify-center relative h-[500px]">
               <div className="relative w-full h-full flex flex-col items-center justify-center gap-4">
 
-                {/* Video Container - Zoomed Out */}
+                {/* Video Container - Seamless Blend */}
                 <div className="relative w-[450px] h-[380px] rounded-2xl overflow-hidden shadow-2xl">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-contain bg-gradient-to-br from-gray-50 to-gray-100"
+                    className="w-full h-full object-cover"
                   >
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
                   </video>
