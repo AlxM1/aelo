@@ -82,8 +82,10 @@ export default function Home() {
                     muted
                     playsInline
                     className="w-full h-full object-cover"
+                    aria-label="aēlo premium non-alcoholic cocktail being poured into a glass"
                   >
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
                   </video>
                 </div>
               </div>
