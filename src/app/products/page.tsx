@@ -1,9 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useCartStore } from "@/store/cartStore";
+import { products } from "@/data/products";
 
 export default function ProductsPage() {
-  const products = [
+  const addItem = useCartStore((state) => state.addItem);
+
+  const productsWithDetails = [
     {
       id: "gin-tonic",
       number: "001",
