@@ -7,98 +7,65 @@ import { products } from "@/data/products";
 export default function ProductsPage() {
   const addItem = useCartStore((state) => state.addItem);
 
-  const productsWithDetails = [
-    {
-      id: "gin-tonic",
-      number: "001",
-      name: "Gin & Tonic",
-      tagline: "Award-Winning Spanish Style",
-      description: "Handcrafted aromatic bitters made with real spices and notes of fresh cucumber, blood orange, lime, and fresh mint leaves.",
-      ingredients: "Filtered water, alcohol-free gin, tonic, citric acid, organic stevia",
-      flavorProfile: [
-        { name: "Fresh Cucumber", color: "bg-green-100 text-green-700 border-green-200" },
-        { name: "Blood Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
-        { name: "Lime", color: "bg-lime-100 text-lime-700 border-lime-200" },
-        { name: "Mint Leaves", color: "bg-emerald-100 text-emerald-700 border-emerald-200" }
-      ],
-      gradient: "from-cyan-100 via-teal-100 to-emerald-100",
-      accentGradient: "from-cyan-500 to-teal-600",
-      image: "/gin-tonic.webp",
-      icon: "🌿",
-    },
-    {
-      id: "aperitivo-spritz",
-      number: "002",
-      name: "Aperitivo Spritz",
-      tagline: "European-Inspired Refreshment",
-      description: "Notes of fresh Seville oranges, grapefruit, rhubarb, and handcrafted aromatic bitters made with real spices and sparkling prosecco.",
-      ingredients: "Filtered water, alcohol-free aperitivo, natural flavors, organic stevia",
-      flavorProfile: [
-        { name: "Seville Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
-        { name: "Grapefruit", color: "bg-pink-100 text-pink-700 border-pink-200" },
-        { name: "Rhubarb", color: "bg-red-100 text-red-700 border-red-200" },
-        { name: "Sparkling Prosecco", color: "bg-amber-100 text-amber-700 border-amber-200" }
-      ],
-      gradient: "from-orange-100 via-red-100 to-pink-100",
-      accentGradient: "from-orange-500 to-red-600",
-      image: "/aperitivo-spritz.webp",
-      icon: "🍊",
-    },
-    {
-      id: "peach-bellini",
-      number: "003",
-      name: "Peach Bellini",
-      tagline: "Sparkling Peach Elegance",
-      description: "Smooth notes of fresh peaches combined with handcrafted aromatic bitters, real spices, herbs and sparkling Prosecco.",
-      ingredients: "Filtered water, natural peach flavors, handcrafted bitters, organic stevia",
-      flavorProfile: [
-        { name: "Fresh Peaches", color: "bg-orange-100 text-orange-600 border-orange-200" },
-        { name: "Real Spices", color: "bg-amber-100 text-amber-700 border-amber-200" },
-        { name: "Herbs", color: "bg-green-100 text-green-600 border-green-200" },
-        { name: "Sparkling Prosecco", color: "bg-yellow-100 text-yellow-600 border-yellow-200" }
-      ],
-      gradient: "from-rose-100 via-pink-100 to-orange-100",
-      accentGradient: "from-rose-500 to-pink-600",
-      image: "/peach-bellini.webp",
-      icon: "🍑",
-    },
-    {
-      id: "lime-margarita",
-      number: "004",
-      name: "Lime Margarita",
-      tagline: "The Party Pleaser",
-      description: "Tequila-extract based blend combining bitter orange, lime juice, and a pinch of salt. Perfect for any celebration.",
-      ingredients: "Filtered water, tequila extract, bitter orange, lime juice, sea salt, organic stevia",
-      flavorProfile: [
-        { name: "Bitter Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
-        { name: "Fresh Lime", color: "bg-lime-100 text-lime-700 border-lime-200" },
-        { name: "Sea Salt", color: "bg-gray-100 text-gray-600 border-gray-200" },
-        { name: "Tequila Notes", color: "bg-amber-100 text-amber-600 border-amber-200" }
-      ],
-      gradient: "from-lime-100 via-green-100 to-yellow-100",
-      accentGradient: "from-lime-500 to-green-600",
-      image: "/lime-margarita.webp",
-      icon: "🍋",
-    },
-    {
-      id: "limoncello-spritz",
-      number: "005",
-      name: "Limoncello Spritz",
-      tagline: "Classic Summer Flavor",
-      description: "Zero alcohol, zero sugar and zero calories featuring alcohol-free aperitivo and bright lemon essence with sparkling sophistication.",
-      ingredients: "Filtered water, alcohol-free aperitivo, natural lemon flavors, organic stevia",
-      flavorProfile: [
-        { name: "Bright Lemon", color: "bg-yellow-100 text-yellow-700 border-yellow-200" },
-        { name: "Citrus Zest", color: "bg-orange-100 text-orange-600 border-orange-200" },
-        { name: "Sparkling", color: "bg-cyan-100 text-cyan-600 border-cyan-200" },
-        { name: "Light & Refreshing", color: "bg-blue-100 text-blue-600 border-blue-200" }
-      ],
-      gradient: "from-yellow-100 via-amber-100 to-orange-100",
-      accentGradient: "from-yellow-500 to-amber-600",
-      image: "/limoncello-spritz.webp",
-      icon: "✨",
-    },
-  ];
+  const productsWithDetails = products.map((product, index) => {
+    const detailsMap: Record<string, any> = {
+      "gin-tonic": {
+        number: "001",
+        ingredients: "Filtered water, alcohol-free gin, tonic, citric acid, organic stevia",
+        flavorProfile: [
+          { name: "Fresh Cucumber", color: "bg-green-100 text-green-700 border-green-200" },
+          { name: "Blood Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
+          { name: "Lime", color: "bg-lime-100 text-lime-700 border-lime-200" },
+          { name: "Mint Leaves", color: "bg-emerald-100 text-emerald-700 border-emerald-200" }
+        ],
+      },
+      "aperitivo-spritz": {
+        number: "002",
+        ingredients: "Filtered water, alcohol-free aperitivo, natural flavors, organic stevia",
+        flavorProfile: [
+          { name: "Seville Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
+          { name: "Grapefruit", color: "bg-pink-100 text-pink-700 border-pink-200" },
+          { name: "Rhubarb", color: "bg-red-100 text-red-700 border-red-200" },
+          { name: "Sparkling Prosecco", color: "bg-amber-100 text-amber-700 border-amber-200" }
+        ],
+      },
+      "peach-bellini": {
+        number: "003",
+        ingredients: "Filtered water, natural peach flavors, handcrafted bitters, organic stevia",
+        flavorProfile: [
+          { name: "Fresh Peaches", color: "bg-orange-100 text-orange-600 border-orange-200" },
+          { name: "Real Spices", color: "bg-amber-100 text-amber-700 border-amber-200" },
+          { name: "Herbs", color: "bg-green-100 text-green-600 border-green-200" },
+          { name: "Sparkling Prosecco", color: "bg-yellow-100 text-yellow-600 border-yellow-200" }
+        ],
+      },
+      "lime-margarita": {
+        number: "004",
+        ingredients: "Filtered water, tequila extract, bitter orange, lime juice, sea salt, organic stevia",
+        flavorProfile: [
+          { name: "Bitter Orange", color: "bg-orange-100 text-orange-700 border-orange-200" },
+          { name: "Fresh Lime", color: "bg-lime-100 text-lime-700 border-lime-200" },
+          { name: "Sea Salt", color: "bg-gray-100 text-gray-600 border-gray-200" },
+          { name: "Tequila Notes", color: "bg-amber-100 text-amber-600 border-amber-200" }
+        ],
+      },
+      "limoncello-spritz": {
+        number: "005",
+        ingredients: "Filtered water, alcohol-free aperitivo, natural lemon flavors, organic stevia",
+        flavorProfile: [
+          { name: "Bright Lemon", color: "bg-yellow-100 text-yellow-700 border-yellow-200" },
+          { name: "Citrus Zest", color: "bg-orange-100 text-orange-600 border-orange-200" },
+          { name: "Sparkling", color: "bg-cyan-100 text-cyan-600 border-cyan-200" },
+          { name: "Light & Refreshing", color: "bg-blue-100 text-blue-600 border-blue-200" }
+        ],
+      },
+    };
+
+    return {
+      ...product,
+      ...detailsMap[product.id],
+    };
+  });
 
   return (
     <div className="min-h-screen">
@@ -272,9 +239,10 @@ export default function ProductsPage() {
                   {/* CTA Button */}
                   <div className="pt-4">
                     <button
+                      onClick={() => addItem(product)}
                       className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${product.accentGradient} text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base`}
                     >
-                      Order Now
+                      Add to Cart - ${product.price.toFixed(2)} CAD
                     </button>
                   </div>
                 </div>
