@@ -291,6 +291,7 @@ export default function ProductsPage() {
                 <a href="/#find-aelo" className="block hover:text-foreground transition-colors">Find aēlo</a>
                 <a href="/#about" className="block hover:text-foreground transition-colors">About</a>
                 <a href="/#sustainability" className="block hover:text-foreground transition-colors">Sustainability</a>
+                <a href="/contact" className="block hover:text-foreground transition-colors">Contact Us</a>
               </div>
             </div>
             <div>
