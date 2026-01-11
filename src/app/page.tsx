@@ -51,40 +51,40 @@ export default function Home() {
 
             {/* Right - Video Section */}
             <div className="hidden lg:flex items-center justify-center relative h-[500px]">
-              <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative w-full h-full flex flex-col items-center justify-center gap-4">
 
-                {/* Video Container */}
-                <div className="relative w-full h-full max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+                {/* Video Container - Zoomed Out */}
+                <div className="relative w-[450px] h-[380px] rounded-2xl overflow-hidden shadow-2xl">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-gradient-to-br from-gray-50 to-gray-100"
                   >
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
                   </video>
+                </div>
 
-                  {/* Discreet Discount Banner - Bottom Overlay */}
-                  <div className="absolute bottom-6 left-6 right-6 z-20">
-                    <div className="bg-black/40 backdrop-blur-md rounded-xl px-5 py-3 border border-white/10 shadow-lg">
-                      <div className="flex items-center justify-between gap-4">
-                        <div className="flex-1">
-                          <p className="text-white/90 text-sm font-medium mb-1">
-                            Save 10% on your first order
-                          </p>
-                          <p className="text-white/70 text-xs">
-                            Use code at checkout
-                          </p>
-                        </div>
-                        <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg">
-                          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-0.5">
-                            Code
-                          </p>
-                          <p className="text-sm font-mono font-bold text-gray-900">
-                            FRIENDSOFAELO
-                          </p>
-                        </div>
+                {/* Discreet Discount Banner - Outside Video Frame */}
+                <div className="w-[450px]">
+                  <div className="bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-md rounded-xl px-5 py-3 border border-white/10 shadow-xl">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex-1">
+                        <p className="text-white/95 text-sm font-medium mb-0.5">
+                          Save 10% on your first order
+                        </p>
+                        <p className="text-white/70 text-xs">
+                          Use code at checkout
+                        </p>
+                      </div>
+                      <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md">
+                        <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-0.5">
+                          Code
+                        </p>
+                        <p className="text-sm font-mono font-bold text-gray-900">
+                          FRIENDSOFAELO
+                        </p>
                       </div>
                     </div>
                   </div>
