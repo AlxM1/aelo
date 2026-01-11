@@ -89,35 +89,35 @@ export default function Home() {
                 description: "Classic sophistication with botanical notes and refreshing citrus",
                 gradient: "from-cyan-100 via-teal-50 to-emerald-100",
                 hoverGradient: "group-hover:from-cyan-200 group-hover:via-teal-100 group-hover:to-emerald-200",
-                icon: "🌿",
+                image: "/gin-tonic.webp",
               },
               {
                 name: "Peach Bellini",
                 description: "Elegant and fruity, perfect for any celebration",
                 gradient: "from-rose-100 via-pink-50 to-peach-100",
                 hoverGradient: "group-hover:from-rose-200 group-hover:via-pink-100 group-hover:to-orange-100",
-                icon: "🍑",
+                image: "/peach-bellini.webp",
               },
               {
                 name: "Aperitivo Spritz",
                 description: "Bitter-sweet Italian classic with a refreshing twist",
                 gradient: "from-orange-100 via-amber-50 to-red-100",
                 hoverGradient: "group-hover:from-orange-200 group-hover:via-amber-100 group-hover:to-red-200",
-                icon: "🍊",
+                image: "/aperitivo-spritz.webp",
               },
               {
                 name: "Lime Margarita",
                 description: "Bold citrus flavor with a perfect balance of sweet and tart",
                 gradient: "from-lime-100 via-green-50 to-yellow-100",
                 hoverGradient: "group-hover:from-lime-200 group-hover:via-green-100 group-hover:to-yellow-200",
-                icon: "🍋",
+                image: "/lime-margarita.webp",
               },
               {
                 name: "Limoncello Spritz",
                 description: "Bright lemon essence with sparkling sophistication",
                 gradient: "from-yellow-100 via-amber-50 to-orange-50",
                 hoverGradient: "group-hover:from-yellow-200 group-hover:via-amber-100 group-hover:to-orange-100",
-                icon: "✨",
+                image: "/limoncello-spritz.webp",
               },
             ].map((product) => (
               <div
@@ -125,10 +125,17 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} ${product.hoverGradient} transition-all duration-500`}></div>
-                <div className="relative z-10 p-8">
-                  <div className="aspect-square bg-white/40 backdrop-blur-sm rounded-xl mb-6 flex items-center justify-center group-hover:bg-white/60 transition-all duration-500">
-                    <div className="text-7xl transform group-hover:scale-110 transition-transform duration-500">
-                      {product.icon}
+                <div className="relative z-10 p-8 flex flex-col">
+                  <div className="aspect-square relative mb-6 flex items-center justify-center">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        width={300}
+                        height={400}
+                        className="object-contain drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-500"
+                        priority
+                      />
                     </div>
                   </div>
                   <h3 className="text-2xl font-light mb-3 tracking-tight text-gray-900">
