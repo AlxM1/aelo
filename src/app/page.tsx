@@ -207,6 +207,124 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Story Section */}
+      <section id="story" className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-background to-purple-50 opacity-50"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-700"></div>
+                <div className="relative z-10 p-12">
+                  <div className="text-6xl mb-6">👨‍🍳</div>
+                  <h3 className="text-2xl font-light mb-4 text-white">Founded by Experts</h3>
+                  <p className="text-white/80 leading-relaxed">
+                    Christos Kalaitzis brings years of experience from premium establishments, crafting sophisticated beverages that rival traditional cocktails.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
+                Our Story
+              </h2>
+              <div className="space-y-6 text-lg text-foreground/70 leading-relaxed">
+                <p>
+                  Founded by Christos Kalaitzis, an experienced bartender from premium establishments, aēlo was born from identifying a critical gap in the market.
+                </p>
+                <p>
+                  Christos observed that premium alcohol-free beverages were lacking—most options were either plain soda water or sugar-laden drinks that didn't deliver the sophisticated experience discerning consumers deserved.
+                </p>
+                <p className="font-medium text-foreground">
+                  This insight led to the development of handcrafted, zero-proof cocktails that never compromise on taste, quality, or sophistication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Mission Section */}
+      <section id="mission" className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-cream to-emerald-50 opacity-70"></div>
+        <div className="max-w-7xl mx-auto relative z-10 text-center">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
+            Our Mission
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-8">
+            <p className="text-2xl md:text-3xl font-light text-foreground leading-relaxed">
+              Zero Moments Wasted
+            </p>
+            <p className="text-xl text-foreground/70 leading-relaxed">
+              We believe every moment matters. That's why we've created Canada's favourite mocktail with zero alcohol, zero sugar, and zero calories—without sacrificing the premium experience you deserve.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+              <div className="relative overflow-hidden rounded-2xl group hover:shadow-xl transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-100 to-pink-200 group-hover:from-rose-200 group-hover:to-pink-300 transition-all duration-300"></div>
+                <div className="relative z-10 p-8">
+                  <div className="text-5xl mb-4">🌟</div>
+                  <h3 className="text-xl font-medium mb-3 text-gray-900">Premium Quality</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    All-natural ingredients, ethically sourced and handcrafted with care by experienced mixologists.
+                  </p>
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl group hover:shadow-xl transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-cyan-200 group-hover:from-blue-200 group-hover:to-cyan-300 transition-all duration-300"></div>
+                <div className="relative z-10 p-8">
+                  <div className="text-5xl mb-4">💪</div>
+                  <h3 className="text-xl font-medium mb-3 text-gray-900">Health Conscious</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Keto-friendly, vegan, and gluten-free. Perfect for those leading an active, health-conscious lifestyle.
+                  </p>
+                </div>
+              </div>
+              <div className="relative overflow-hidden rounded-2xl group hover:shadow-xl transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-indigo-200 group-hover:from-purple-200 group-hover:to-indigo-300 transition-all duration-300"></div>
+                <div className="relative z-10 p-8">
+                  <div className="text-5xl mb-4">🎯</div>
+                  <h3 className="text-xl font-medium mb-3 text-gray-900">Sober Curious</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    Join the movement. Millennials and Gen Z are redefining social drinking with sophisticated zero-proof options.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Find aēlo Near You Section */}
+      <section id="find-aelo" className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-background to-cyan-50 opacity-60"></div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
+            Find a<span className="text-3xl align-top">ē</span>lo Near You
+          </h2>
+          <p className="text-xl text-foreground/70 leading-relaxed mb-12 max-w-3xl mx-auto">
+            Discover where you can find our premium non-alcoholic cocktails at retailers near you.
+          </p>
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-2xl mx-auto group hover:shadow-3xl transition-all duration-300">
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"></div>
+            <div className="relative z-10 p-12">
+              <div className="text-6xl mb-6">📍</div>
+              <h3 className="text-2xl font-light mb-6 text-white">Store Locator</h3>
+              <p className="text-white/80 leading-relaxed mb-8">
+                Use our store locator to find aēlo products at your favorite retailers. Available at select locations across Canada.
+              </p>
+              <a
+                href="https://drinkaelo.com/findaelo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 text-sm font-medium tracking-wide hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                Find Retailers
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="relative py-24 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-cream to-rose-50 opacity-70"></div>
@@ -335,6 +453,9 @@ export default function Home() {
               <h4 className="text-sm font-medium mb-4 tracking-wider">Quick Links</h4>
               <div className="space-y-2 text-sm text-foreground/60">
                 <a href="#products" className="block hover:text-foreground transition-colors">Products</a>
+                <a href="#story" className="block hover:text-foreground transition-colors">Our Story</a>
+                <a href="#mission" className="block hover:text-foreground transition-colors">Our Mission</a>
+                <a href="#find-aelo" className="block hover:text-foreground transition-colors">Find aēlo</a>
                 <a href="#about" className="block hover:text-foreground transition-colors">About</a>
                 <a href="#sustainability" className="block hover:text-foreground transition-colors">Sustainability</a>
               </div>
