@@ -7,7 +7,7 @@ import { products } from "@/data/products";
 export default function ProductsPage() {
   const addItem = useCartStore((state) => state.addItem);
 
-  const productsWithDetails = products.map((product, index) => {
+  const productsWithDetails: any[] = products.map((product, index) => {
     const detailsMap: Record<string, any> = {
       "gin-tonic": {
         number: "001",
