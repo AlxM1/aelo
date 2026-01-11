@@ -144,7 +144,7 @@ export default function ProductsPage() {
       {/* Products Grid */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
-          {products.map((product, index) => (
+          {productsWithDetails.map((product, index) => (
             <div
               key={product.id}
               className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
@@ -203,7 +203,7 @@ export default function ProductsPage() {
                       Flavor Profile
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {product.flavorProfile.map((flavor) => (
+                      {product.flavorProfile.map((flavor: any) => (
                         <span
                           key={flavor.name}
                           className={`px-3 sm:px-4 py-1.5 sm:py-2 ${flavor.color} border rounded-full text-xs sm:text-sm font-medium`}
