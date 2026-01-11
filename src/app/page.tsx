@@ -41,7 +41,7 @@ export default function Home() {
             {/* Left Content */}
             <div className="max-w-4xl text-center lg:text-left">
               <h1 className="text-5xl sm:text-6xl md:text-8xl font-light tracking-tight mb-6 lg:mb-8 leading-[0.9]">
-                Zero Moments<br />Wasted<span className="text-4xl sm:text-5xl align-top">™</span>
+                Zero Moments<br />Wasted
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-8 lg:mb-12 leading-relaxed mx-auto lg:mx-0">
                 Handcrafted premium non-alcoholic cocktails. Zero alcohol. Zero sugar. Zero calories.
