@@ -23,27 +23,87 @@ export default function Home() {
       <section className="relative pt-32 pb-20 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-background to-emerald-50 opacity-60"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-4xl">
-            <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-[0.9]">
-              Zero Moments<br />Wasted<span className="text-5xl align-top">™</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-12 leading-relaxed">
-              Handcrafted premium non-alcoholic cocktails. Zero alcohol. Zero sugar. Zero calories.
-              <span className="block mt-4 text-base">Proudly Canadian 🇨🇦</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#products"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-medium tracking-wide hover:from-slate-800 hover:to-slate-600 transition-all shadow-lg hover:shadow-xl"
-              >
-                Explore Products
-              </a>
-              <a
-                href="#about"
-                className="inline-flex items-center justify-center px-8 py-4 border border-accent text-accent text-sm font-medium tracking-wide hover:bg-accent hover:text-white transition-colors"
-              >
-                Our Story
-              </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="max-w-4xl">
+              <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 leading-[0.9]">
+                Zero Moments<br />Wasted<span className="text-5xl align-top">™</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-12 leading-relaxed">
+                Handcrafted premium non-alcoholic cocktails. Zero alcohol. Zero sugar. Zero calories.
+                <span className="block mt-4 text-base">Proudly Canadian 🇨🇦</span>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="#products"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-slate-900 to-slate-700 text-white text-sm font-medium tracking-wide hover:from-slate-800 hover:to-slate-600 transition-all shadow-lg hover:shadow-xl"
+                >
+                  Explore Products
+                </a>
+                <a
+                  href="#about"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-accent text-accent text-sm font-medium tracking-wide hover:bg-accent hover:text-white transition-colors"
+                >
+                  Our Story
+                </a>
+              </div>
+            </div>
+
+            {/* Right - Animated Cocktail Section */}
+            <div className="hidden lg:flex items-center justify-center relative h-[400px]">
+              {/* Animation Container */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Can pouring */}
+                <div className="absolute top-8 right-24 z-20 animate-tilt-can">
+                  <Image
+                    src="/lime-margarita.webp"
+                    alt="aēlo can"
+                    width={80}
+                    height={100}
+                    className="object-contain drop-shadow-2xl"
+                  />
+                </div>
+
+                {/* Pouring liquid stream */}
+                <div className="absolute top-32 right-20 w-2 bg-gradient-to-b from-lime-300 to-lime-400 rounded-full animate-pour z-10 shadow-lg"></div>
+
+                {/* Cocktail Glass */}
+                <div className="absolute bottom-20 right-8 z-10">
+                  <div className="relative">
+                    {/* Glass outline */}
+                    <div className="w-32 h-40 border-4 border-gray-300 bg-white/20 backdrop-blur-sm rounded-b-full relative overflow-hidden shadow-xl">
+                      {/* Liquid fill */}
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-lime-400 to-lime-300 animate-fill-glass rounded-b-full"></div>
+
+                      {/* Ice cubes */}
+                      <div className="absolute top-1/2 left-1/4 w-6 h-6 bg-white/70 backdrop-blur-sm rounded shadow-inner animate-float"></div>
+                      <div className="absolute top-1/3 right-1/4 w-5 h-5 bg-white/60 backdrop-blur-sm rounded shadow-inner animate-float" style={{ animationDelay: '0.5s' }}></div>
+
+                      {/* Bubbles */}
+                      <div className="absolute bottom-2 left-1/4 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2s ease-in-out infinite' }}></div>
+                      <div className="absolute bottom-2 right-1/3 w-1.5 h-1.5 bg-white rounded-full" style={{ animation: 'bubbleRise 2.5s ease-in-out infinite 0.3s' }}></div>
+                      <div className="absolute bottom-2 left-1/2 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2.2s ease-in-out infinite 0.6s' }}></div>
+                      <div className="absolute bottom-2 right-1/4 w-1 h-1 bg-white rounded-full" style={{ animation: 'bubbleRise 2.8s ease-in-out infinite 0.9s' }}></div>
+                    </div>
+
+                    {/* Lemon twist decoration */}
+                    <div className="absolute -top-2 right-2 text-4xl animate-float" style={{ animationDelay: '1s' }}>
+                      🍋
+                    </div>
+
+                    {/* Glass stem */}
+                    <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-3 h-6 bg-gradient-to-b from-gray-300 to-gray-400 shadow-md"></div>
+                    <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-16 h-2 bg-gradient-to-b from-gray-400 to-gray-500 rounded-full shadow-lg"></div>
+                  </div>
+                </div>
+
+                {/* CTA Text */}
+                <div className="absolute bottom-0 left-0 right-0 text-center animate-fade-in-up">
+                  <p className="text-sm font-medium text-gray-700 mb-2">Experience the difference</p>
+                  <p className="text-lg font-light text-gray-900">Shop Now & Save 10%</p>
+                  <p className="text-xs text-gray-500 mt-1">Use code: <span className="font-mono font-semibold">FRIENDSOFAELO</span></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
