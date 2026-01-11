@@ -45,7 +45,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
-            <div className="max-w-4xl text-center lg:text-left">
+            <div className="max-w-4xl text-center lg:text-left order-2 lg:order-1">
               <h1 className="text-5xl sm:text-6xl md:text-8xl font-light tracking-tight mb-6 lg:mb-8 leading-[0.9]">
                 Zero Moments<br />Wasted
               </h1>
@@ -70,7 +70,7 @@ export default function Home() {
             </div>
 
             {/* Right - Video Section - Responsive */}
-            <div className="flex items-center justify-center relative h-[300px] sm:h-[400px] lg:h-[500px] mt-8 lg:mt-0">
+            <div className="flex items-center justify-center relative h-[300px] sm:h-[400px] lg:h-[500px] mt-8 lg:mt-0 order-1 lg:order-2">
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Video Container - Responsive */}
                 <div className="relative w-full max-w-[400px] sm:max-w-[450px] lg:w-[550px] h-full rounded-2xl overflow-hidden shadow-2xl">
