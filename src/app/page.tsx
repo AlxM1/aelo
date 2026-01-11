@@ -216,7 +216,6 @@ export default function Home() {
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-700"></div>
                 <div className="relative z-10 p-12">
-                  <div className="text-6xl mb-6">👨‍🍳</div>
                   <h3 className="text-2xl font-light mb-4 text-white">Founded by Experts</h3>
                   <p className="text-white/80 leading-relaxed">
                     Christos Kalaitzis brings years of experience from premium establishments, crafting sophisticated beverages that rival traditional cocktails.
