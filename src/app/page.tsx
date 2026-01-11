@@ -192,8 +192,9 @@ export default function Home() {
       </section>
 
       {/* Sustainability Section */}
-      <section id="sustainability" className="py-24 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center">
+      <section id="sustainability" className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-background to-teal-50 opacity-50"></div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
             Sustainability Matters
           </h2>
@@ -201,31 +202,38 @@ export default function Home() {
             We're committed to making a positive impact on the environment. For every box sold, we plant one tree through our partnership with reforestation nonprofits.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div className="bg-beige p-10">
-              <div className="text-4xl mb-4">♻️</div>
-              <h3 className="text-xl font-medium mb-3">100% Recyclable</h3>
-              <p className="text-foreground/70">
-                All packaging is fully recyclable with zero plastic rings, reducing environmental impact.
-              </p>
+            <div className="relative overflow-hidden rounded-2xl group hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-emerald-200 group-hover:from-green-200 group-hover:to-emerald-300 transition-all duration-300"></div>
+              <div className="relative z-10 p-10">
+                <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">♻️</div>
+                <h3 className="text-xl font-medium mb-3 text-gray-900">100% Recyclable</h3>
+                <p className="text-gray-700">
+                  All packaging is fully recyclable with zero plastic rings, reducing environmental impact.
+                </p>
+              </div>
             </div>
-            <div className="bg-beige p-10">
-              <div className="text-4xl mb-4">🌱</div>
-              <h3 className="text-xl font-medium mb-3">One Tree, One Box</h3>
-              <p className="text-foreground/70">
-                For every box purchased, we plant a tree in partnership with reforestation organizations.
-              </p>
+            <div className="relative overflow-hidden rounded-2xl group hover:shadow-xl transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-lime-100 to-green-200 group-hover:from-lime-200 group-hover:to-green-300 transition-all duration-300"></div>
+              <div className="relative z-10 p-10">
+                <div className="text-5xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🌱</div>
+                <h3 className="text-xl font-medium mb-3 text-gray-900">One Tree, One Box</h3>
+                <p className="text-gray-700">
+                  For every box purchased, we plant a tree in partnership with reforestation organizations.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 lg:px-8 bg-accent text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6">
+      <section className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-6 text-white">
             Join the Movement
           </h2>
-          <p className="text-xl opacity-90 mb-8 leading-relaxed">
+          <p className="text-xl opacity-90 mb-8 leading-relaxed text-white">
             Millennials and Gen Z are leading the zero-proof revolution. Be part of the sober-curious community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -233,13 +241,13 @@ export default function Home() {
               href="https://www.instagram.com/drinkaelo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-accent text-sm font-medium tracking-wide hover:bg-white/90 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-slate-900 text-sm font-medium tracking-wide hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               Follow on Instagram
             </a>
           </div>
-          <p className="mt-8 text-sm opacity-75">
-            Use code <span className="font-mono bg-white/20 px-3 py-1">FRIENDSOFAELO</span> for 10% off your first order
+          <p className="mt-8 text-sm opacity-75 text-white">
+            Use code <span className="font-mono bg-white/20 px-3 py-1 rounded">FRIENDSOFAELO</span> for 10% off your first order
           </p>
         </div>
       </section>
