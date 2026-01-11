@@ -53,13 +53,13 @@ export default function Home() {
             <div className="hidden lg:flex items-center justify-center relative h-[500px]">
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* Video Container - Full Content Visible */}
-                <div className="relative w-[500px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+                <div className="relative w-[550px] h-[480px] rounded-2xl overflow-hidden shadow-2xl">
                   <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   >
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
                   </video>
