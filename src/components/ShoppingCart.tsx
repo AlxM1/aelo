@@ -131,18 +131,18 @@ export default function ShoppingCart() {
                             </button>
                           </div>
                         </div>
-                        <div className="text-right">
-                          <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+                        <div className="text-right flex flex-col items-end justify-start">
+                          <p className="font-medium text-xs sm:text-sm">${(item.price * item.quantity).toFixed(2)}</p>
                         </div>
                       </div>
                     ))}
                   </div>
 
                   {/* Total */}
-                  <div className="border-t border-gray-200 pt-4 mb-6">
+                  <div className="border-t border-gray-200 pt-3 sm:pt-4 mb-4 sm:mb-6">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm text-gray-600">Subtotal</span>
-                      <span className="font-medium">${getTotalPrice().toFixed(2)} CAD</span>
+                      <span className="text-xs sm:text-sm text-gray-600">Subtotal</span>
+                      <span className="font-medium text-sm sm:text-base">${getTotalPrice().toFixed(2)} CAD</span>
                     </div>
                     <p className="text-xs text-gray-500 mb-4">
                       Shipping and taxes calculated at checkout
@@ -153,14 +153,14 @@ export default function ShoppingCart() {
                   <button
                     onClick={handleCheckout}
                     disabled={isLoading}
-                    className="w-full bg-gradient-to-r from-slate-900 to-slate-700 text-white py-4 rounded-lg font-medium hover:from-slate-800 hover:to-slate-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full bg-gradient-to-r from-slate-900 to-slate-700 text-white py-3 sm:py-4 rounded-lg font-medium hover:from-slate-800 hover:to-slate-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                   >
                     {isLoading ? 'Processing...' : 'Proceed to Checkout'}
                   </button>
 
                   <button
                     onClick={clearCart}
-                    className="w-full mt-3 text-sm text-gray-600 hover:text-gray-800 underline"
+                    className="w-full mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600 hover:text-gray-800 underline"
                   >
                     Clear Cart
                   </button>
