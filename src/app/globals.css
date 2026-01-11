@@ -28,92 +28,119 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Cocktail Animation Keyframes */
+/* Realistic Cocktail Animation Keyframes */
 @keyframes tiltCan {
+  0%, 15% {
+    transform: rotate(0deg) translateY(0) translateX(0);
+  }
+  25%, 85% {
+    transform: rotate(-50deg) translateY(20px) translateX(15px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0) translateX(0);
+  }
+}
+
+@keyframes liquidPour {
   0%, 20% {
-    transform: rotate(0deg) translateX(0);
-  }
-  40%, 100% {
-    transform: rotate(-45deg) translateX(10px);
-  }
-}
-
-@keyframes pour {
-  0%, 30% {
     opacity: 0;
-    height: 0;
+    transform: scaleY(0) translateY(0);
   }
-  40% {
+  25% {
     opacity: 1;
-    height: 0;
+    transform: scaleY(0.3) translateY(0);
+  }
+  30%, 80% {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+  90% {
+    opacity: 0.5;
+    transform: scaleY(0.3) translateY(0);
   }
   100% {
-    opacity: 1;
-    height: 120px;
+    opacity: 0;
+    transform: scaleY(0) translateY(0);
   }
 }
 
-@keyframes fillGlass {
-  0%, 35% {
-    height: 0%;
-    opacity: 0.3;
+@keyframes fillLiquid {
+  0%, 25% {
+    clip-path: inset(100% 0 0 0);
+  }
+  85% {
+    clip-path: inset(20% 0 0 0);
   }
   100% {
-    height: 75%;
-    opacity: 0.6;
+    clip-path: inset(20% 0 0 0);
   }
 }
 
-@keyframes bubbleRise {
+@keyframes bubbleFloat {
   0% {
-    bottom: 0;
+    bottom: 15%;
+    opacity: 0;
+    transform: translateX(0) scale(0);
+  }
+  10% {
     opacity: 1;
     transform: translateX(0) scale(1);
   }
   100% {
-    bottom: 100%;
+    bottom: 85%;
     opacity: 0;
-    transform: translateX(10px) scale(0.5);
+    transform: translateX(var(--bubble-drift, 10px)) scale(0.3);
   }
 }
 
-@keyframes float {
+@keyframes liquidShimmer {
   0%, 100% {
-    transform: translateY(0);
+    background-position: 0% 50%;
   }
   50% {
-    transform: translateY(-10px);
+    background-position: 100% 50%;
   }
 }
 
-@keyframes fadeInUp {
+@keyframes iceFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(5deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+
+@keyframes garnishBob {
+  0%, 100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+}
+
+@keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: scale(0.9) translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 
-.animate-tilt-can {
-  animation: tiltCan 4s ease-in-out infinite;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
-.animate-pour {
-  animation: pour 4s ease-in-out infinite;
-}
-
-.animate-fill-glass {
-  animation: fillGlass 4s ease-in-out infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
 
