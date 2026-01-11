@@ -59,7 +59,7 @@ export default function Home() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                   >
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
                   </video>
