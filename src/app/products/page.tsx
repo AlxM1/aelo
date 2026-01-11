@@ -125,37 +125,37 @@ export default function ProductsPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 lg:px-8 bg-gradient-to-br from-amber-50 via-background to-emerald-50">
+      <section className="pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-amber-50 via-background to-emerald-50">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-6xl md:text-7xl font-light tracking-tight mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-4 sm:mb-6 leading-tight">
             Our Collection
           </h1>
-          <p className="text-xl md:text-2xl text-foreground/70 font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/70 font-light max-w-3xl mx-auto leading-relaxed px-4">
             Handcrafted by an internationally award-winning mixologist using premium, locally-sourced ingredients in Vancouver, BC.
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-6 text-xs sm:text-sm px-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Zero Alcohol</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Zero Sugar</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Zero Calories</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Keto-Friendly</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Vegan</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">✓</span>
+              <span className="text-xl sm:text-2xl">✓</span>
               <span className="text-foreground/80">Gluten-Free</span>
             </div>
           </div>
