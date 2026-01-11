@@ -11,7 +11,7 @@ export default function Home() {
               a<span className="text-sm align-top">ē</span>lo
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-              <a href="#products" className="hover:opacity-60 transition-opacity">Products</a>
+              <a href="/products" className="hover:opacity-60 transition-opacity">Products</a>
               <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
             </div>
@@ -51,10 +51,9 @@ export default function Home() {
 
             {/* Right - Video Section */}
             <div className="hidden lg:flex items-center justify-center relative h-[500px]">
-              <div className="relative w-full h-full flex flex-col items-center justify-center gap-4">
-
-                {/* Video Container - Seamless Blend */}
-                <div className="relative w-[450px] h-[380px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* Video Container - Full Content Visible */}
+                <div className="relative w-[500px] h-[450px] rounded-2xl overflow-hidden shadow-2xl">
                   <video
                     autoPlay
                     loop
@@ -65,30 +64,6 @@ export default function Home() {
                     <source src="/cocktail-pour.mp4" type="video/mp4" />
                   </video>
                 </div>
-
-                {/* Discreet Discount Banner - Outside Video Frame */}
-                <div className="w-[450px]">
-                  <div className="bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-md rounded-xl px-5 py-3 border border-white/10 shadow-xl">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <p className="text-white/95 text-sm font-medium mb-0.5">
-                          Save 10% on your first order
-                        </p>
-                        <p className="text-white/70 text-xs">
-                          Use code at checkout
-                        </p>
-                      </div>
-                      <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md">
-                        <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider mb-0.5">
-                          Code
-                        </p>
-                        <p className="text-sm font-mono font-bold text-gray-900">
-                          FRIENDSOFAELO
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -96,7 +71,7 @@ export default function Home() {
       </section>
 
       {/* Key Values Banner */}
-      <section className="relative py-12 overflow-hidden">
+      <section className="relative py-16 overflow-hidden mt-8">
         <div className="absolute inset-0 bg-gradient-to-r from-rose-50 via-amber-50 to-emerald-50"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
