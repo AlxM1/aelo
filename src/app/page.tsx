@@ -14,6 +14,9 @@ export default function Home() {
             </a>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium">
               <a href="/products" className="hover:opacity-60 transition-opacity">Products</a>
+              <a href="#story" className="hover:opacity-60 transition-opacity">Our Story</a>
+              <a href="#mission" className="hover:opacity-60 transition-opacity">Our Mission</a>
+              <a href="#find-aelo" className="hover:opacity-60 transition-opacity">Find aēlo Near You</a>
               <a href="#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
             </div>
@@ -45,7 +48,7 @@ export default function Home() {
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-foreground/70 font-light max-w-2xl mb-8 lg:mb-12 leading-relaxed mx-auto lg:mx-0">
                 Handcrafted premium non-alcoholic cocktails. Zero alcohol. Zero sugar. Zero calories.
-                <span className="block mt-4 text-sm sm:text-base">Proudly Canadian 🇨🇦</span>
+                <span className="block mt-4 text-sm sm:text-base">Proudly Canadian 🍁</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
@@ -343,7 +346,7 @@ export default function Home() {
             </div>
           </div>
           <div className="pt-8 border-t border-black/5 text-center text-sm text-foreground/40">
-            <p>© {new Date().getFullYear()} aēlo. All rights reserved. Zero Moments Wasted™</p>
+            <p>© {new Date().getFullYear()} Liquid Intelligence Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
