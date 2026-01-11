@@ -30,6 +30,9 @@ export default function Home() {
         <div id="mobile-menu" className="hidden md:hidden bg-background/95 backdrop-blur-md border-t border-black/5">
           <div className="px-6 py-4 space-y-3">
             <a href="/products" className="block text-sm font-medium hover:opacity-60 transition-opacity">Products</a>
+            <a href="#story" className="block text-sm font-medium hover:opacity-60 transition-opacity">Our Story</a>
+            <a href="#mission" className="block text-sm font-medium hover:opacity-60 transition-opacity">Our Mission</a>
+            <a href="#find-aelo" className="block text-sm font-medium hover:opacity-60 transition-opacity">Find aēlo Near You</a>
             <a href="#about" className="block text-sm font-medium hover:opacity-60 transition-opacity">About</a>
             <a href="#sustainability" className="block text-sm font-medium hover:opacity-60 transition-opacity">Sustainability</a>
           </div>
