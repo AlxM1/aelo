@@ -1,0 +1,15 @@
+# aēlo Non-Alcoholic Cocktails - Robots.txt
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+Allow: /products
+Allow: /contact
+Allow: /faq
+Disallow: /api/
+Disallow: /checkout/
+Disallow: /checkout/success
+Disallow: /checkout/cancel
+
+# Sitemap location
+Sitemap: https://drinkaelo.com/sitemap.xml
