@@ -107,6 +107,9 @@ export default function ProductsPage() {
             </a>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium">
               <a href="/products" className="opacity-100 border-b-2 border-accent pb-1">Products</a>
+              <a href="/#story" className="hover:opacity-60 transition-opacity">Our Story</a>
+              <a href="/#mission" className="hover:opacity-60 transition-opacity">Our Mission</a>
+              <a href="/#find-aelo" className="hover:opacity-60 transition-opacity">Find aēlo Near You</a>
               <a href="/#about" className="hover:opacity-60 transition-opacity">About</a>
               <a href="/#sustainability" className="hover:opacity-60 transition-opacity">Sustainability</a>
             </div>
@@ -120,6 +123,9 @@ export default function ProductsPage() {
         <div id="mobile-menu-products" className="hidden md:hidden bg-background/95 backdrop-blur-md border-t border-black/5">
           <div className="px-6 py-4 space-y-3">
             <a href="/products" className="block text-sm font-medium opacity-100 border-b border-accent pb-2">Products</a>
+            <a href="/#story" className="block text-sm font-medium hover:opacity-60 transition-opacity">Our Story</a>
+            <a href="/#mission" className="block text-sm font-medium hover:opacity-60 transition-opacity">Our Mission</a>
+            <a href="/#find-aelo" className="block text-sm font-medium hover:opacity-60 transition-opacity">Find aēlo Near You</a>
             <a href="/#about" className="block text-sm font-medium hover:opacity-60 transition-opacity">About</a>
             <a href="/#sustainability" className="block text-sm font-medium hover:opacity-60 transition-opacity">Sustainability</a>
           </div>
@@ -306,6 +312,9 @@ export default function ProductsPage() {
               <h4 className="text-sm font-medium mb-4 tracking-wider">Quick Links</h4>
               <div className="space-y-2 text-sm text-foreground/60">
                 <a href="/products" className="block hover:text-foreground transition-colors">Products</a>
+                <a href="/#story" className="block hover:text-foreground transition-colors">Our Story</a>
+                <a href="/#mission" className="block hover:text-foreground transition-colors">Our Mission</a>
+                <a href="/#find-aelo" className="block hover:text-foreground transition-colors">Find aēlo</a>
                 <a href="/#about" className="block hover:text-foreground transition-colors">About</a>
                 <a href="/#sustainability" className="block hover:text-foreground transition-colors">Sustainability</a>
               </div>
