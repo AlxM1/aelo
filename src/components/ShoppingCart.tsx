@@ -95,12 +95,12 @@ export default function ShoppingCart() {
                         key={item.id}
                         className="flex gap-4 p-4 border border-gray-200 rounded-lg"
                       >
-                        <div className="relative w-16 h-20 flex-shrink-0">
+                        <div className="relative w-12 h-16 flex-shrink-0">
                           <Image
                             src={item.image}
                             alt={item.name}
-                            width={64}
-                            height={80}
+                            width={48}
+                            height={64}
                             className="object-contain"
                           />
                         </div>
