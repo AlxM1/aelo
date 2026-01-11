@@ -163,29 +163,27 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-32">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
           {products.map((product, index) => (
             <div
               key={product.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
             >
-              {/* Product Image Side */}
+              {/* Product Image Side - Always first on mobile, alternates on desktop */}
               <div
-                className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}
+                className={`relative order-1 ${index % 2 === 1 ? "lg:order-2" : "lg:order-1"}`}
               >
                 <div
-                  className={`relative rounded-3xl overflow-hidden bg-gradient-to-br ${product.gradient} p-12 shadow-2xl`}
+                  className={`relative rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br ${product.gradient} p-6 sm:p-8 lg:p-12 shadow-xl sm:shadow-2xl`}
                 >
                   {/* Product Icon */}
-                  <div className="absolute top-8 right-8 text-6xl opacity-40">
+                  <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8 text-4xl sm:text-5xl lg:text-6xl opacity-40">
                     {product.icon}
                   </div>
 
                   {/* Product Image */}
-                  <div className="relative w-full h-80 flex items-center justify-center">
+                  <div className="relative w-full h-64 sm:h-72 lg:h-80 flex items-center justify-center">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -196,40 +194,40 @@ export default function ProductsPage() {
                   </div>
 
                   {/* Product Number Badge */}
-                  <div className="absolute bottom-8 left-8">
-                    <div className={`bg-gradient-to-r ${product.accentGradient} text-white px-4 py-2 rounded-full text-sm font-semibold`}>
+                  <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8">
+                    <div className={`bg-gradient-to-r ${product.accentGradient} text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold`}>
                       No. {product.number}
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Product Details Side */}
-              <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <div className="space-y-6">
+              {/* Product Details Side - Always second on mobile, alternates on desktop */}
+              <div className={`order-2 ${index % 2 === 1 ? "lg:order-1" : "lg:order-2"}`}>
+                <div className="space-y-4 sm:space-y-6">
                   <div>
-                    <h2 className="text-5xl font-light tracking-tight mb-3">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight mb-2 sm:mb-3">
                       {product.name}
                     </h2>
-                    <p className={`text-lg font-medium bg-gradient-to-r ${product.accentGradient} bg-clip-text text-transparent`}>
+                    <p className={`text-base sm:text-lg font-medium bg-gradient-to-r ${product.accentGradient} bg-clip-text text-transparent`}>
                       {product.tagline}
                     </p>
                   </div>
 
-                  <p className="text-lg text-foreground/70 leading-relaxed">
+                  <p className="text-base sm:text-lg text-foreground/70 leading-relaxed">
                     {product.description}
                   </p>
 
                   {/* Flavor Profile */}
                   <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-3">
+                    <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-3">
                       Flavor Profile
                     </h3>
                     <div className="flex flex-wrap gap-2">
                       {product.flavorProfile.map((flavor) => (
                         <span
                           key={flavor.name}
-                          className={`px-4 py-2 ${flavor.color} border rounded-full text-sm font-medium`}
+                          className={`px-3 sm:px-4 py-1.5 sm:py-2 ${flavor.color} border rounded-full text-xs sm:text-sm font-medium`}
                         >
                           {flavor.name}
                         </span>
@@ -239,17 +237,17 @@ export default function ProductsPage() {
 
                   {/* Ingredients */}
                   <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-2">
+                    <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-foreground/60 mb-2">
                       Ingredients
                     </h3>
-                    <p className="text-sm text-foreground/60 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-foreground/60 leading-relaxed">
                       {product.ingredients}
                     </p>
                   </div>
 
                   {/* Size & Certifications */}
                   <div className="pt-4 border-t border-gray-200">
-                    <div className="flex items-center gap-6 text-sm text-foreground/60">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-6 text-xs sm:text-sm text-foreground/60">
                       <div>
                         <span className="font-semibold text-foreground">Size:</span> 355ml
                       </div>
@@ -262,7 +260,7 @@ export default function ProductsPage() {
                   {/* CTA Button */}
                   <div className="pt-4">
                     <button
-                      className={`px-8 py-4 bg-gradient-to-r ${product.accentGradient} text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300`}
+                      className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r ${product.accentGradient} text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 text-sm sm:text-base`}
                     >
                       Order Now
                     </button>
@@ -275,17 +273,17 @@ export default function ProductsPage() {
       </section>
 
       {/* Promo Banner */}
-      <section className="py-16 px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-light tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-light tracking-tight mb-3 sm:mb-4">
             Save 10% on Your First Order
           </h2>
-          <p className="text-xl opacity-90 mb-6">
+          <p className="text-lg sm:text-xl opacity-90 mb-4 sm:mb-6">
             Use code at checkout
           </p>
-          <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-8 py-4">
-            <p className="text-sm opacity-75 mb-2">PROMO CODE</p>
-            <p className="text-3xl font-mono font-bold">FRIENDSOFAELO</p>
+          <div className="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-6 sm:px-8 py-3 sm:py-4">
+            <p className="text-xs sm:text-sm opacity-75 mb-2">PROMO CODE</p>
+            <p className="text-2xl sm:text-3xl font-mono font-bold">FRIENDSOFAELO</p>
           </div>
         </div>
       </section>
