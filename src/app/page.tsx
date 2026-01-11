@@ -137,15 +137,17 @@ export default function Home() {
                   </div>
 
                   {/* Product Image */}
-                  <div className="w-full h-48 relative mb-6 flex items-center justify-center">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      width={120}
-                      height={160}
-                      className="object-contain drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-500"
-                      priority
-                    />
+                  <div className="w-full h-52 relative mb-6 flex items-center justify-center overflow-visible">
+                    <div className="relative w-32 h-full flex items-center justify-center">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        width={140}
+                        height={180}
+                        className="object-contain drop-shadow-2xl transform group-hover:scale-110 transition-transform duration-500 max-w-full max-h-full"
+                        priority
+                      />
+                    </div>
                   </div>
 
                   <h3 className="text-2xl font-light mb-3 tracking-tight text-gray-900">
