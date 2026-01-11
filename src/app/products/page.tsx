@@ -329,7 +329,7 @@ export default function ProductsPage() {
             </div>
           </div>
           <div className="pt-8 border-t border-black/5 text-center text-sm text-foreground/40">
-            <p>© {new Date().getFullYear()} aēlo. All rights reserved. Zero Moments Wasted™</p>
+            <p>© {new Date().getFullYear()} Liquid Intelligence Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
