@@ -48,20 +48,21 @@ export default function Home() {
       </section>
 
       {/* Key Values Banner */}
-      <section className="py-12 bg-beige">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="relative py-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-rose-50 via-amber-50 to-emerald-50"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-light mb-2">0</div>
-              <div className="text-sm tracking-wider uppercase text-foreground/70">Alcohol</div>
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-light mb-3 bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">0</div>
+              <div className="text-sm tracking-wider uppercase text-gray-700 font-medium">Alcohol</div>
             </div>
-            <div>
-              <div className="text-3xl font-light mb-2">0</div>
-              <div className="text-sm tracking-wider uppercase text-foreground/70">Sugar</div>
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-light mb-3 bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">0</div>
+              <div className="text-sm tracking-wider uppercase text-gray-700 font-medium">Sugar</div>
             </div>
-            <div>
-              <div className="text-3xl font-light mb-2">0</div>
-              <div className="text-sm tracking-wider uppercase text-foreground/70">Calories</div>
+            <div className="transform hover:scale-105 transition-transform duration-300">
+              <div className="text-5xl font-light mb-3 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">0</div>
+              <div className="text-sm tracking-wider uppercase text-gray-700 font-medium">Calories</div>
             </div>
           </div>
         </div>
@@ -145,8 +146,9 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 lg:px-8 bg-cream">
-        <div className="max-w-7xl mx-auto">
+      <section id="about" className="relative py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-cream to-rose-50 opacity-70"></div>
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-8">
@@ -165,24 +167,27 @@ export default function Home() {
               </div>
             </div>
             <div className="space-y-6">
-              <div className="bg-background p-8">
-                <h3 className="text-sm tracking-widest uppercase mb-4 text-foreground/60">Certifications</h3>
-                <div className="space-y-3 text-base">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">✓</span>
-                    <span>Keto-Friendly</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">✓</span>
-                    <span>Vegan</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">✓</span>
-                    <span>Gluten-Free</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">✓</span>
-                    <span>All Natural Ingredients</span>
+              <div className="relative overflow-hidden rounded-2xl group">
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50 group-hover:from-gray-50 group-hover:to-white transition-all duration-300"></div>
+                <div className="relative z-10 p-8 shadow-lg">
+                  <h3 className="text-sm tracking-widest uppercase mb-4 text-foreground/60">Certifications</h3>
+                  <div className="space-y-3 text-base">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl text-green-600">✓</span>
+                      <span>Keto-Friendly</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl text-green-600">✓</span>
+                      <span>Vegan</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl text-green-600">✓</span>
+                      <span>Gluten-Free</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl text-green-600">✓</span>
+                      <span>All Natural Ingredients</span>
+                    </div>
                   </div>
                 </div>
               </div>
