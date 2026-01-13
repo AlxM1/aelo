@@ -14,19 +14,20 @@ export default async function EditProductPage({
 
   if (!isNew) {
     try {
-      product = await prisma.product.findUnique({
+      const dbProduct = await prisma.product.findUnique({
         where: { id },
       });
 
-      if (!product) {
+      if (!dbProduct) {
         notFound();
       }
 
-      // Convert Decimal to number for the form
+      // Convert Decimal to number and cast types for the form
       product = {
-        ...product,
-        price: product.price.toNumber(),
-        compareAtPrice: product.compareAtPrice?.toNumber() ?? null,
+        ...dbProduct,
+        price: dbProduct.price.toNumber(),
+        compareAtPrice: dbProduct.compareAtPrice?.toNumber() ?? null,
+        flavorProfile: dbProduct.flavorProfile as Array<{ name: string; color: string }> | null,
       };
     } catch {
       notFound();
