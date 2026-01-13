@@ -1,0 +1,314 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// USER MANAGEMENT
+// ============================================
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+}
+
+model User {
+  id             String    @id @default(cuid())
+  email          String    @unique
+  passwordHash   String
+  name           String
+  role           Role      @default(EDITOR)
+  isActive       Boolean   @default(true)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  lastLoginAt    DateTime?
+
+  createdProducts Product[] @relation("ProductCreatedBy")
+  updatedProducts Product[] @relation("ProductUpdatedBy")
+  orders          Order[]   @relation("OrderProcessedBy")
+
+  @@index([email])
+}
+
+// ============================================
+// PRODUCTS
+// ============================================
+
+model Product {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  name            String
+  tagline         String
+  description     String   @db.Text
+  price           Decimal  @db.Decimal(10, 2)
+  compareAtPrice  Decimal? @db.Decimal(10, 2)
+  image           String
+  icon            String
+  gradient        String
+  accentGradient  String
+  ingredients     String?  @db.Text
+  flavorProfile   Json?
+  productNumber   String?
+  size            String   @default("355ml x 4")
+  isActive        Boolean  @default(true)
+  sortOrder       Int      @default(0)
+
+  metaTitle       String?
+  metaDescription String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  createdBy       User?    @relation("ProductCreatedBy", fields: [createdById], references: [id])
+  createdById     String?
+  updatedBy       User?    @relation("ProductUpdatedBy", fields: [updatedById], references: [id])
+  updatedById     String?
+  orderItems      OrderItem[]
+
+  @@index([slug])
+  @@index([isActive])
+}
+
+// ============================================
+// ORDERS
+// ============================================
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model Order {
+  id                  String      @id @default(cuid())
+  orderNumber         String      @unique
+  stripeSessionId     String?     @unique
+  stripePaymentIntent String?
+
+  customerEmail       String
+  customerName        String?
+
+  shippingAddress     Json?
+  billingAddress      Json?
+
+  subtotal            Decimal     @db.Decimal(10, 2)
+  shippingCost        Decimal     @db.Decimal(10, 2) @default(0)
+  tax                 Decimal     @db.Decimal(10, 2) @default(0)
+  total               Decimal     @db.Decimal(10, 2)
+  currency            String      @default("CAD")
+
+  status              OrderStatus @default(PENDING)
+  notes               String?     @db.Text
+
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+  paidAt              DateTime?
+  shippedAt           DateTime?
+  deliveredAt         DateTime?
+
+  items               OrderItem[]
+  processedBy         User?       @relation("OrderProcessedBy", fields: [processedById], references: [id])
+  processedById       String?
+
+  @@index([orderNumber])
+  @@index([customerEmail])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  productId   String?
+
+  productName String
+  productSlug String
+  quantity    Int
+  unitPrice   Decimal @db.Decimal(10, 2)
+  totalPrice  Decimal @db.Decimal(10, 2)
+
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product     Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+}
+
+// ============================================
+// SITE SETTINGS
+// ============================================
+
+model SiteSettings {
+  id                  String   @id @default("default")
+
+  siteName            String   @default("aelo")
+  siteTagline         String   @default("Zero Moments Wasted")
+  logoUrl             String?
+  faviconUrl          String?
+
+  colorBackground     String   @default("#fafaf8")
+  colorForeground     String   @default("#1a1a1a")
+  colorCream          String   @default("#e8e6dc")
+  colorBeige          String   @default("#d9d6cc")
+  colorAccent         String   @default("#000000")
+  colorPrimary        String   @default("#1a1a1a")
+  colorSecondary      String   @default("#4a4a4a")
+
+  fontPrimary         String   @default("Geist")
+  fontSecondary       String   @default("Geist Mono")
+
+  contactEmail        String   @default("hello@drinkaelo.com")
+  contactPhone        String?
+  addressLine1        String?
+  addressLine2        String?
+  city                String   @default("Vancouver")
+  province            String   @default("BC")
+  country             String   @default("Canada")
+  postalCode          String?
+
+  instagramUrl        String?
+  facebookUrl         String?
+  tiktokUrl           String?
+  twitterUrl          String?
+  linkedinUrl         String?
+
+  defaultMetaTitle    String?
+  defaultMetaDesc     String?  @db.Text
+  ogImageUrl          String?
+
+  promoCode           String?
+  promoDiscount       String?
+  promoEnabled        Boolean  @default(true)
+
+  heroTitle           String   @default("Zero Moments Wasted")
+  heroSubtitle        String?  @db.Text
+  heroVideoUrl        String?
+
+  aboutTitle          String?
+  aboutContent        String?  @db.Text
+
+  founderName         String   @default("Christos Kalaitzis")
+  founderTitle        String   @default("Founder")
+  companyName         String   @default("Liquid Intelligence Ltd.")
+  foundedYear         String   @default("2020")
+
+  updatedAt           DateTime @updatedAt
+}
+
+// ============================================
+// PAGES & SECTIONS (CMS)
+// ============================================
+
+model Page {
+  id              String    @id @default(cuid())
+  slug            String    @unique
+  title           String
+  isPublished     Boolean   @default(false)
+
+  metaTitle       String?
+  metaDescription String?   @db.Text
+
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  publishedAt     DateTime?
+
+  sections        Section[]
+
+  @@index([slug])
+  @@index([isPublished])
+}
+
+model Section {
+  id          String   @id @default(cuid())
+  pageId      String
+  sectionType String
+  title       String?
+  content     Json
+  sortOrder   Int      @default(0)
+  isVisible   Boolean  @default(true)
+
+  bgGradient  String?
+  customCss   String?  @db.Text
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  page        Page     @relation(fields: [pageId], references: [id], onDelete: Cascade)
+
+  @@index([pageId])
+  @@index([sectionType])
+}
+
+// ============================================
+// FAQs
+// ============================================
+
+model FAQ {
+  id          String   @id @default(cuid())
+  question    String
+  answer      String   @db.Text
+  category    String
+  sortOrder   Int      @default(0)
+  isPublished Boolean  @default(true)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([category])
+  @@index([isPublished])
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+model NavItem {
+  id          String    @id @default(cuid())
+  label       String
+  href        String
+  isExternal  Boolean   @default(false)
+  sortOrder   Int       @default(0)
+  isVisible   Boolean   @default(true)
+  location    String    @default("header")
+
+  parentId    String?
+  parent      NavItem?  @relation("NavItemChildren", fields: [parentId], references: [id])
+  children    NavItem[] @relation("NavItemChildren")
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([location])
+  @@index([parentId])
+}
+
+// ============================================
+// MEDIA LIBRARY
+// ============================================
+
+model Media {
+  id          String   @id @default(cuid())
+  filename    String
+  originalName String
+  mimeType    String
+  size        Int
+  url         String
+  altText     String?
+  caption     String?
+
+  width       Int?
+  height      Int?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([mimeType])
+}
